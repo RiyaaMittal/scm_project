@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #here{
+            color: red;
+        }
+        #validate{
+            border: 2px solid black;
+            padding: 3px;
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        Email: <input type="email" placeholder="enter email" id="em"><br><br>
+        Password: <input type="text" placeholder="enter password(min 8 characters)" id="pas"><br><br>
+        <p id="here"></p>
+        <p onclick="cl();" id="validate">validate email</p>
+        <p onclick="cl2();" id="validate">validate password</p>
+    </form>
+
+
+    <script>
+        var a=document.getElementById("em");
+        var b=document.getElementById("pas");
+        var text=document.getElementById("here");
+        var pattern=/[0-9]/g;
+        var c=/@chitkara.edu.in/;
+        //let result=a.value.match(c);
+        function cl(){
+            //text.innerHTML=result;
+            if(!a.value.match(c)){
+                text.innerHTML="invalid email";
+                alert("invalid email ");
+            }
+            else{
+                text.innerHTML="";
+                alert("valid email");
+            }
+            //else if(!pattern.test(b)){
+            //    alert("wrong password");
+            //}
+        }
+        //if(a!=pattern){
+        //    alert("use a number to make password strong")
+        //}
+        function cl2(){
+            if(!b.value.match(pattern)){
+                text.innerHTML="invalid password";
+                alert("invalid password ");
+            }
+            else{
+                text.innerHTML="";
+                alert("valid password");
+            }
+        }
+
+    </script>
+
+</body>
+</html>
